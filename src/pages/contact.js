@@ -9,7 +9,7 @@ const contact = () => {
     <Layout>
       <SEO title="prewedding" />
       <Box>
-        <Text>Lorem, ipsum.</Text>
+        <h3>Lorem, ipsum.</h3>
         <Text>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, sit!
         </Text>

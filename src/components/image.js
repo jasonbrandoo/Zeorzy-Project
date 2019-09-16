@@ -21,21 +21,30 @@ const StyledImg = styled(Img)`
 `;
 
 const StyledImgText = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  font-size: 2rem;
-  font-weight: 100;
-  font-style: italic;
-  letter-spacing: 10px;
-  color: white;
-
-  @media screen and (max-width: 600px) {
-    font-size: 1rem;
-  }
+  ${props =>
+    props.text &&
+    `background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 100;
+    font-style: italic;
+    letter-spacing: 12px;
+    color: white;
+    
+    @media screen and (max-width: 812px) {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+    
+    `}
 `;
 
-const Image = ({ children, width, height, margin }) => {
+const Image = ({ children, width, height, margin, text }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "lake.jpg" }) {
@@ -55,7 +64,7 @@ const Image = ({ children, width, height, margin }) => {
         height={height}
         margin={margin}
       />
-      <StyledImgText>{children}</StyledImgText>
+      <StyledImgText text={text}>{children}</StyledImgText>
     </>
   );
 };
@@ -65,12 +74,14 @@ Image.defaultProps = {
   height: '',
   margin: '',
   children: '',
+  text: false,
 };
 
 Image.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   margin: PropTypes.string,
+  text: PropTypes.bool,
   children: PropTypes.node,
 };
 

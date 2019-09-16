@@ -8,16 +8,16 @@ import Image from '../components/image';
 
 const WeedingContainer = styled.div`
   width: 100%;
-  margin 5px;
 `;
 
 const wedding = () => {
   return (
     <Layout>
       <SEO title="wedding" />
-      <Text align="center" mt="5rem">
-        Lorem, ipsum.
-      </Text>
+      <Box>
+        <h3>Lorem</h3>
+        <Text align="center">Lorem ipsum dolor sit amet.</Text>
+      </Box>
       <Box direction="row" mt="0">
         <WeedingContainer>
           <Image height="50%" />

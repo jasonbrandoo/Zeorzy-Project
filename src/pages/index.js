@@ -9,7 +9,7 @@ import Box from '../components/box';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Image>ZEORZYPROJECT</Image>
+    <Image text>ZEORZYPROJECT</Image>
     <Box mt="1rem">
       <h1>Lorem, ipsum.</h1>
       <Text align="center">

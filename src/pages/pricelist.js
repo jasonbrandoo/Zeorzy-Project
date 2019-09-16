@@ -3,15 +3,13 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Box from '../components/box';
 import Text from '../components/text';
-import Image from '../components/image';
 
 const pricelist = () => {
   return (
     <Layout>
       <SEO title="prewedding" />
       <Box>
-        <Text>Lorem, ipsum.</Text>
-        <Image />
+        <h3>Lorem, ipsum.</h3>
         <Text>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, sit!
         </Text>

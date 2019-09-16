@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
+const StyledBox = styled.div`
   margin: ${props => props.mt || '5rem'} auto 0 auto;
   width: 80%;
   display: flex;
@@ -14,9 +14,9 @@ const StyledContainer = styled.div`
 
 const box = ({ children, mt, direction, content }) => {
   return (
-    <StyledContainer mt={mt} direction={direction} content={content}>
+    <StyledBox mt={mt} direction={direction} content={content}>
       {children}
-    </StyledContainer>
+    </StyledBox>
   );
 };
 

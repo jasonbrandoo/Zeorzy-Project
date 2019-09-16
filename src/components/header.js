@@ -14,8 +14,27 @@ const StyledInner = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
-  @media screen and (max-width: 600px) {
-    display: ${props => (props.open ? 'block' : 'none')};
+  @media screen and (max-width: 812px) {
+    transition: opacity 3s linear;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    ${props =>
+      props.open &&
+      `opacity: 1; visibility: visible; display: block; height: auto`};
+  }
+`;
+
+const StyledBrand = styled(Link)`
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  margin-right: auto;
+
+  @media screen and (max-width: 812px) {
+    display: block;
   }
 `;
 
@@ -25,25 +44,20 @@ const StyledLink = styled(Link)`
   color: #ffffff;
   font-size: 16px;
 
-  &:first-of-type {
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: auto;
-  }
-
   :hover {
-    color: #dfe3ee;
+    background: rgba(20, 20, 20);
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 812px) {
     display: block;
+    border-top: 1px solid white;
   }
 `;
 
 const StyledLabel = styled.label`
   display: none;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 812px) {
     display: inline-block;
     padding: 1rem;
   }
@@ -66,7 +80,7 @@ const Header = ({ siteTitle }) => {
         />
       </StyledLabel>
       <StyledInner open={open}>
-        <StyledLink to="/">ZEORZY PROJECT</StyledLink>
+        <StyledBrand to="/">ZEORZY PROJECT</StyledBrand>
         <StyledLink to="/about">ABOUT</StyledLink>
         <StyledLink to="/wedding">WEDDING</StyledLink>
         <StyledLink to="/prewedding">PREWEDDING</StyledLink>
