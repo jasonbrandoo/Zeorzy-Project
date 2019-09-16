@@ -4,20 +4,23 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import Text from '../components/text';
+import Box from '../components/box';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h3>Lorem, ipsum.</h3>
-    <Text align="center">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere temporibus
-      provident, cumque deserunt harum quod quibusdam quae! Aperiam, ipsam
-      error?
-    </Text>
-    <Image />
-    <Text align="center" mt="1rem">
-      Lorem ipsum dolor sit amet.
-    </Text>
+    <Image>ZEORZYPROJECT</Image>
+    <Box mt="1rem">
+      <h1>Lorem, ipsum.</h1>
+      <Text align="center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+        perferendis et, consectetur ipsa facilis nostrum ducimus placeat ullam
+        ea doloremque ab sint voluptatibus! Accusantium cupiditate eveniet est
+        cumque molestias alias ab earum quae consequuntur autem, minus ea
+        deserunt nemo quaerat voluptate ullam illo facere unde modi asperiores
+        magnam commodi. Labore?
+      </Text>
+    </Box>
   </Layout>
 );
 

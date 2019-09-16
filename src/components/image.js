@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -15,22 +16,62 @@ import styled from 'styled-components';
  */
 
 const StyledImg = styled(Img)`
-  width: 90%;
+  width: ${props => props.width || '100%'};
+  height: ${props => props.height || '100vh'};
 `;
 
-const Image = () => {
+const StyledImgText = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  font-size: 2rem;
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: 10px;
+  color: white;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+`;
+
+const Image = ({ children, width, height, margin }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "lake.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(maxWidth: 2000, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `);
-  return <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return (
+    <>
+      <StyledImg
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        width={width}
+        height={height}
+        margin={margin}
+      />
+      <StyledImgText>{children}</StyledImgText>
+    </>
+  );
+};
+
+Image.defaultProps = {
+  width: '',
+  height: '',
+  margin: '',
+  children: '',
+};
+
+Image.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  margin: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Image;

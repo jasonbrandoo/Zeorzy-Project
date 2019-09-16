@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledText = styled.p`
   text-align: ${props => props.align};
-  font-size: ${props => props.size};
+  font-size: ${props => props.size || '12px'};
   margin-top: ${props => props.mt};
   margin-right: ${props => props.mr};
   margin-bottom: ${props => props.mb};
@@ -18,7 +18,7 @@ const text = ({ children, size, align, mt, mr, mb, ml }) => (
 );
 
 text.defaultProps = {
-  size: '12px',
+  size: '',
   align: '',
   mt: '',
   mr: '',

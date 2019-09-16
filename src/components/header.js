@@ -4,18 +4,17 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-  background: #3b5998;
-  max-width: 960px;
-  margin: 2rem auto;
-  transition: height 3s linear;
+  background: rgb(27, 27, 27);
+  width: 100%;
+  position: fixed;
+  z-index: 1;
 `;
 
 const StyledInner = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: 0 1rem;
+  align-items: center;
+  margin: 0 auto;
   @media screen and (max-width: 600px) {
-    transition: height 3s linear;
     display: ${props => (props.open ? 'block' : 'none')};
   }
 `;
@@ -24,8 +23,13 @@ const StyledLink = styled(Link)`
   padding: 1rem;
   text-decoration: none;
   color: #ffffff;
-  height: 100%;
-  font-size: 12px;
+  font-size: 16px;
+
+  &:first-of-type {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: auto;
+  }
 
   :hover {
     color: #dfe3ee;
@@ -40,7 +44,7 @@ const StyledLabel = styled.label`
   display: none;
 
   @media screen and (max-width: 600px) {
-    display: block;
+    display: inline-block;
     padding: 1rem;
   }
 `;
@@ -62,12 +66,12 @@ const Header = ({ siteTitle }) => {
         />
       </StyledLabel>
       <StyledInner open={open}>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/about">About Us</StyledLink>
-        <StyledLink to="/wedding">Wedding</StyledLink>
-        <StyledLink to="/pre-wedding">Pre Wedding</StyledLink>
-        <StyledLink to="/price-list">Price List</StyledLink>
-        <StyledLink to="/contact">Contact Us</StyledLink>
+        <StyledLink to="/">ZEORZY PROJECT</StyledLink>
+        <StyledLink to="/about">ABOUT</StyledLink>
+        <StyledLink to="/wedding">WEDDING</StyledLink>
+        <StyledLink to="/prewedding">PREWEDDING</StyledLink>
+        <StyledLink to="/pricelist">PRICELIST</StyledLink>
+        <StyledLink to="/contact">CONTACT</StyledLink>
       </StyledInner>
     </StyledHeader>
   );

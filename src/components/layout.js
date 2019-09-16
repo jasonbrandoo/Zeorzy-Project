@@ -12,14 +12,14 @@ import styled from 'styled-components';
 
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './header';
+import Main from './main';
+import Footer from './footer';
 
 const StyledContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
 `;
 
 const Layout = ({ children }) => {
@@ -36,13 +36,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
       <StyledContainer>
-        {children}
-        <footer>
-          ©{new Date().getFullYear()}, Built with
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Main>{children}</Main>
+        <Footer />
       </StyledContainer>
     </>
   );
