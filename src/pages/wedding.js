@@ -17,8 +17,6 @@ const wedding = () => {
       <Box>
         <h3>Lorem</h3>
         <Text align="center">Lorem ipsum dolor sit amet.</Text>
-      </Box>
-      <Box direction="row" mt="0">
         <WeedingContainer>
           <Image height="50%" />
           <Text align="center">Lorem, ipsum.</Text>

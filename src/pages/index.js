@@ -10,7 +10,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Image text>ZEORZYPROJECT</Image>
-    <Box mt="1rem">
+    <Box>
       <h1>Lorem, ipsum.</h1>
       <Text align="center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit

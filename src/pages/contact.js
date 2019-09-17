@@ -3,16 +3,25 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Box from '../components/box';
 import Text from '../components/text';
+import Icons from '../components/icons';
 
 const contact = () => {
   return (
     <Layout>
-      <SEO title="prewedding" />
+      <SEO title="Contact" />
       <Box>
-        <h3>Lorem, ipsum.</h3>
+        <h3>Contact Us!</h3>
         <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, sit!
+          Hi There! kindly find our detail contact below and we can't wait to
+          meet you soon
         </Text>
+        <Text size="1rem">Phone Number</Text>
+        <Text>Zeorzy: xxxx-xxxx-xxxx</Text>
+        <div style={{ border: '1px solid black', width: '100%' }} />
+        <Text mt="1rem">Feel free to reach us on this platform</Text>
+      </Box>
+      <Box direction="row" mt="0">
+        <Icons />
       </Box>
     </Layout>
   );

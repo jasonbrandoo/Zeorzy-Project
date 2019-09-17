@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Text from './text';
@@ -20,6 +21,21 @@ const StyledInfo = styled.div`
   color: dimgrey;
 `;
 
+const StyledMap = styled.div`
+  display: flex;
+`;
+
+const StyledLink = styled(Link)`
+  padding: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+
+  @media screen and (max-width: 812px) {
+    display: block;
+  }
+`;
+
 const footer = () => {
   return (
     <StyledFooter>
@@ -33,6 +49,13 @@ const footer = () => {
               Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
             </Text>
           </StyledInfo>
+          <StyledMap>
+            <StyledLink to="/about">ABOUT</StyledLink>
+            <StyledLink to="/wedding">WEDDING</StyledLink>
+            <StyledLink to="/prewedding">PREWEDDING</StyledLink>
+            <StyledLink to="/pricelist">PRICELIST</StyledLink>
+            <StyledLink to="/contact">CONTACT</StyledLink>
+          </StyledMap>
         </StyledInner>
       </StyledOuter>
     </StyledFooter>

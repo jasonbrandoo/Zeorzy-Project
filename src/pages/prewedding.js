@@ -17,8 +17,6 @@ const prewedding = () => {
       <Box>
         <h3>Lorem, ipsum.</h3>
         <Text>Lorem ipsum dolor sit amet.</Text>
-      </Box>
-      <Box direction="row" mt="0">
         <WeedingContainer>
           <Image height="50%" />
           <Text align="center">Lorem, ipsum.</Text>

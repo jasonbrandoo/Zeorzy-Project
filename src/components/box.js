@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledBox = styled.div`
-  margin: ${props => props.mt || '5rem'} auto 0 auto;
+  margin: ${props => props.mt || '5rem'} auto ${props => props.mb || '5rem'}
+    auto;
   width: 80%;
   display: flex;
   flex-direction: ${props => props.direction || 'column'};
@@ -12,9 +13,9 @@ const StyledBox = styled.div`
   align-items: center;
 `;
 
-const box = ({ children, mt, direction, content }) => {
+const box = ({ children, mt, mb, direction, content }) => {
   return (
-    <StyledBox mt={mt} direction={direction} content={content}>
+    <StyledBox mt={mt} mb={mb} direction={direction} content={content}>
       {children}
     </StyledBox>
   );
@@ -22,6 +23,7 @@ const box = ({ children, mt, direction, content }) => {
 
 box.defaultProps = {
   mt: '',
+  mb: '',
   direction: '',
   content: '',
 };
@@ -29,6 +31,7 @@ box.defaultProps = {
 box.propTypes = {
   children: PropTypes.node.isRequired,
   mt: PropTypes.string,
+  mb: PropTypes.string,
   direction: PropTypes.string,
   content: PropTypes.string,
 };
