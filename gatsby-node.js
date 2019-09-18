@@ -5,3 +5,40 @@
  */
 
 // You can delete this file if you're not using it
+
+const path = require('path');
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+  const template = path.resolve(`src/components/imageTemplate.js`);
+
+  return graphql(`
+    {
+      allFile {
+        edges {
+          node {
+            id
+            name
+            sourceInstanceName
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    return result.data.allFile.edges.forEach(({ node }) => {
+      console.log(node);
+      const category = node.sourceInstanceName;
+      createPage({
+        path: node.sourceInstanceName,
+        component: template,
+        context: {
+          category,
+        },
+      });
+    });
+  });
+};

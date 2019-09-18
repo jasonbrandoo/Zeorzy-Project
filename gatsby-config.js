@@ -9,6 +9,34 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `category1`,
+        path: `${__dirname}/src/images/category1`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `category2`,
+        path: `${__dirname}/src/images/category2`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `category3`,
+        path: `${__dirname}/src/images/category3`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `category4`,
+        path: `${__dirname}/src/images/category4`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },

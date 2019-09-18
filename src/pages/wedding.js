@@ -4,7 +4,12 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Box from '../components/box';
 import Text from '../components/text';
-import Image from '../components/image';
+import {
+  Category1,
+  Category2,
+  Category3,
+  Category4,
+} from '../components/images/category';
 
 const WeedingContainer = styled.div`
   width: 100%;
@@ -18,19 +23,19 @@ const wedding = () => {
         <h3>Lorem</h3>
         <Text align="center">Lorem ipsum dolor sit amet.</Text>
         <WeedingContainer>
-          <Image height="50%" />
+          <Category1 />
           <Text align="center">Lorem, ipsum.</Text>
         </WeedingContainer>
         <WeedingContainer>
-          <Image height="50%" />
+          <Category2 />
           <Text align="center">Lorem, ipsum.</Text>
         </WeedingContainer>
         <WeedingContainer>
-          <Image height="50%" />
+          <Category3 />
           <Text align="center">Lorem, ipsum.</Text>
         </WeedingContainer>
         <WeedingContainer>
-          <Image height="50%" />
+          <Category4 />
           <Text align="center">Lorem, ipsum.</Text>
         </WeedingContainer>
       </Box>
