@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -13,12 +13,25 @@ const StyledImg = styled(Img)`
 `;
 
 const imageTemplate = ({ data, location }) => {
-  console.log(location);
+  const [category, setCategory] = useState(null);
+  useEffect(() => {
+    let mount = false;
+    if (!mount) {
+      if (location.state === null) {
+        setCategory('sadsd');
+      } else {
+        setCategory(location.state.category);
+      }
+    }
+    return () => {
+      mount = false;
+    };
+  }, [location.state]);
   return (
     <Layout>
       <SEO title="category" />
       <Box>
-        <h3>{location.state.category}</h3>
+        <h3>{category}</h3>
         {data.allFile.edges.map(({ node }) => (
           <StyledImg key={node.id} fluid={node.childImageSharp.fluid} />
         ))}
@@ -27,9 +40,13 @@ const imageTemplate = ({ data, location }) => {
   );
 };
 
+imageTemplate.defaultProps = {
+  location: {},
+};
+
 imageTemplate.propTypes = {
   data: PropTypes.objectOf(PropTypes.object).isRequired,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object,
 };
 
 export default imageTemplate;
