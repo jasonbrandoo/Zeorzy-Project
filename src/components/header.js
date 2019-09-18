@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.header`
   background: rgb(27, 27, 27);
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   position: fixed;
   z-index: 1;
 `;
@@ -58,6 +59,7 @@ const StyledLabel = styled.label`
   display: none;
 
   @media screen and (max-width: 812px) {
+    color: white;
     display: inline-block;
     padding: 1rem;
   }
@@ -80,7 +82,7 @@ const Header = ({ siteTitle }) => {
         />
       </StyledLabel>
       <StyledInner open={open}>
-        <StyledBrand to="/">ZEORZY PROJECT</StyledBrand>
+        <StyledBrand to="/">{siteTitle}</StyledBrand>
         <StyledLink to="/about">ABOUT</StyledLink>
         <StyledLink to="/wedding">WEDDING</StyledLink>
         <StyledLink to="/prewedding">PREWEDDING</StyledLink>

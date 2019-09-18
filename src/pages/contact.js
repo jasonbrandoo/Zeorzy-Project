@@ -18,8 +18,10 @@ const contact = () => {
         <Text size="1rem">Phone Number</Text>
         <Text>Zeorzy: xxxx-xxxx-xxxx</Text>
         <div style={{ border: '1px solid black', width: '100%' }} />
-        <Text mt="1rem">Feel free to reach us on this platform</Text>
       </Box>
+      <Text mt="1rem" align="center">
+        Feel free to reach us on this platform
+      </Text>
       <Box direction="row" mt="0">
         <Icons />
       </Box>

@@ -33,7 +33,14 @@ exports.createPages = ({ actions, graphql }) => {
       console.log(node);
       const category = node.sourceInstanceName;
       createPage({
-        path: node.sourceInstanceName,
+        path: `/wedding/${node.sourceInstanceName}`,
+        component: template,
+        context: {
+          category,
+        },
+      });
+      createPage({
+        path: `/prewedding/${node.sourceInstanceName}`,
         component: template,
         context: {
           category,

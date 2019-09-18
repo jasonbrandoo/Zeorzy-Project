@@ -23,13 +23,18 @@ const StyledInfo = styled.div`
 
 const StyledMap = styled.div`
   display: flex;
+  justify-content: space-between;
+  width: 30%;
+
+  @media screen and (max-width: 812px) {
+    display: block;
+  }
 `;
 
 const StyledLink = styled(Link)`
-  padding: 1rem;
   text-decoration: none;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 12px;
 
   @media screen and (max-width: 812px) {
     display: block;
@@ -46,7 +51,13 @@ const footer = () => {
               Copyright © {new Date().getFullYear()} Zeorzy
             </Text>
             <Text mb="0" mt="0">
-              Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+              Built with{' '}
+              <a
+                href="https://www.gatsbyjs.org"
+                style={{ textDecoration: 'none', color: 'dimgrey' }}
+              >
+                Gatsby
+              </a>
             </Text>
           </StyledInfo>
           <StyledMap>
